@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;
+}
+body{
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #DB4444 0%, #3F24DD 98%)
+}
+h1{
+    margin-bottom: 1rem;
+}
+#multiplication-form{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 350px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    color: #333;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form-control{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: 0 1rem;
+}
+.form-control label{
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+}
+.form-control input{
+    margin-bottom: 1rem;
+    flex: 1;
+    padding: 0.6rem 0.6rem;
+    border: 1px solid #333;
+    width: 50px;
+    border-radius: 5px;
+    text-align: center;
+}
+#btn{
+    padding: 0.5rem 3rem;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #333;
+}
+#multiplication-table{
+    display: grid;
+    justify-content: center;
+    max-width: 300px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: #FFF;
+    color: #333;
+    border-radius: 1rem;
+}
+#multiplcation-operations {
+    padding: 1rem 4rem;
+}
+#multiplcation-operations p{
+    padding-bottom: 10px;
+}
+#multiplcation-operations .row{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 0.5rem;
+    width: 150px;
+}
+#multiplcation-operations .row:last-child{
+    border-bottom: 1px solid #ccc;
+}
+#multiplcation-operations .result{
+    margin-left: 5px;
+}

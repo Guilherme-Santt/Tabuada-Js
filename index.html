@@ -7,6 +7,8 @@
 </head>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js" defer></script>
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <body>
     <h1>Digite o numero e confirme para gerar uma taboada</h1>
     <form id="multiplication-form">
@@ -17,23 +19,16 @@
 
         <div class="form-control">
             <label for="number">Multiplicar até:</label>
-            <input type="number" id="number" name="number" value="10">
+            <input type="number" id="multiplicador" name="multiplicador" value="10">
         </div>
-        <input type="submit" value="Calcular">
+            <input type="submit" value="Calcular" id="btn">
     </form>
 
+    <h2 id="multiplacation-tittle">Tabuada do número:<span></span></h2>
     <div id="multiplication-table">
-        <h2 id="multiplacation-tittle">Tabuada do número<span></span></h2>
         <div id="multiplcation-operations">
-            <p>informe um numero para calcular uma tabuada...</p>
-            <div class="row">
-                <div class="operation">5x1</div>
-                <div class="result">5</div>
-            </div>
-            <div class="row">
-                <div class="operation">5x2</div>
-                <div class="result">10</div>
-            </div>
+            <p>Informe o numero para calcular uma tabuada...</p>
+
         </div>
     </div>
 </body>
