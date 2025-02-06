@@ -26,11 +26,11 @@ const sweetAlertSucess = (descricao) => {
 // FUNÇÃO DE MULTIPLICAÇÃO
 const multiplicar = (number, multiplicador) => {
     multioperations.innerHTML = "";
-    multTittle.innerHTML = "Resultado..."
+    multTittle.innerText = number;
     
     for(let x = 1; multiplicador >= x; x++){
         const result = number*x;
-        sweetAlertSucess(`Taboada do ${number} até ${multiplicador} gerada com sucesso!`)
+        sweetAlertSucess(`Taboada do ${number} gerada com sucesso!`)
         const template = 
         `<div class="row">
             <div class="operation">${number} x ${x} = </div>
@@ -41,6 +41,7 @@ const multiplicar = (number, multiplicador) => {
         const HtmlTemplate = parser.parseFromString(template, "text/html");
         const row          = HtmlTemplate.querySelector(".row");
         multioperations.appendChild(row);
+        
 
         console.log(`${number} x ${x} = ${result}`);
     }
