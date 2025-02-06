@@ -3,6 +3,7 @@ const form            = document.querySelector('#multiplication-form');
 const numberinput     = document.querySelector('#number');
 const multiplicator   = document.querySelector('#multiplicador');
 const multioperations = document.querySelector('#multiplcation-operations');
+const multTittle      = document.querySelector('span');
 
 // <========================================= FUNÇÕES =================================================>
 // ALERTA DE ERRO
@@ -11,7 +12,8 @@ const sweetAlert = (descricao) => {
         icon: 'error',
         title: `${descricao}`,
         // text: 'Verifique os campos preenchidos',
-        confirmButtonText: 'Fechar'})};
+        confirmButtonText: 'Fechar'})
+};
 // ALERTA DE SUCESSO
 const sweetAlertSucess = (descricao) => {
     Swal.fire({
@@ -24,9 +26,11 @@ const sweetAlertSucess = (descricao) => {
 // FUNÇÃO DE MULTIPLICAÇÃO
 const multiplicar = (number, multiplicador) => {
     multioperations.innerHTML = "";
+    multTittle.innerHTML = "Resultado..."
+    
     for(let x = 1; multiplicador >= x; x++){
         const result = number*x;
-        
+        sweetAlertSucess(`Taboada do ${number} até ${multiplicador} gerada com sucesso!`)
         const template = 
         `<div class="row">
             <div class="operation">${number} x ${x} = </div>
@@ -37,7 +41,6 @@ const multiplicar = (number, multiplicador) => {
         const HtmlTemplate = parser.parseFromString(template, "text/html");
         const row          = HtmlTemplate.querySelector(".row");
         multioperations.appendChild(row);
-
 
         console.log(`${number} x ${x} = ${result}`);
     }
@@ -50,10 +53,14 @@ form.addEventListener('submit', (e) =>{
     const inputM = + multiplicator.value;
 
     if(!inputN || !inputM){
-        sweetAlert("Campos obrigatórios");
+        sweetAlert("Campos obrigatórios");  
         return;
     } else{
-        multiplicar(inputN, inputM);
+        if(inputN < 1){
+            sweetAlert("insira um valor maior que 0");
+        } else {
+            multiplicar(inputN, inputM);
+        }
     }
 }
 )
